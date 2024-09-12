@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Portal - Layout</title>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="{% static 'core/estilo.css' %}" />
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+         
+           <img src="{% static 'core/imagenes/banner.jpg' %}" alt="">
+        </div>
+        <div id="navigation">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/shopping/">Tienda</a></li>
+                <li><a href="/reco/">Recomendaciones</a></li>
+                
+            </ul>
+
+        </div>
+        <div id="leftcolumn">
+          
+            <img src="{% static 'core/imagenes/col_izq.jpg' %}" alt="">
+
+        </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="rightcolumn">
+        {% block rightimg %}{% endblock %}
+        </div>
+        <div id="footer">
+            <img src="{% static 'core/imagenes/footer.jpg' %}" alt="">
+        </div>
+    </div>
+</body>
+</html>
