@@ -1,0 +1,102 @@
+Configuración de ambiente de trabajo Django:
+
+1) Ver si esta instalado python
+2) Desintantalar python ( esto para que no haya complicaciones con minconda, que es conquien trabajaremos)
+3) Instalar miniconda (que es una version mas pequeña de anaconda) 
+	https://docs.anaconda.com/miniconda/
+4) Al instalar miniconda 
+   4.a) dejar como just me
+   4.b) en la seccion advanced intallatio options se debe tener tickeado:
+	add Miniconda3 to my PATH environment variable ( Dira que no es recomendado y saldra en rojo, ignorar)
+5) Verificamos que conda este instalado. En la CMD al ingresar "conda" debera desplegarse opciones de comando
+
+
+---- AHora ya podemos comenzar a trabajar ----
+
+7) Partimos creando un ambiente en la CMD:
+	conda create -n NOMBREDELAMBIENTE
+	ó
+	conda create -n NOMBREDELAMBIENTE python (esto ademas de crear el ambiente nos instalara python)
+   Así se puede instalar cualquier paquete de python que se desee
+8) Luego, en la CMD mostrará todo lo que instalará, y se debe aceptar (y)
+9) Una vez creado el ambiente, se debe activar el ambiente. En la CMD:
+	conda activate NOMBREDELAMBIENTE
+10) Con el ambiente activo se debe instalar django. CMD:
+	conda install django
+11) con el comando: conda list, ser puede ver que es lo que se tiene instalado en el ambiente
+12) Los proyectos se deben crear en cualquier parte del pc, menos en la carpeta del ambiente creado.
+	Entonces, hay 2 carpetas, una con el ambiente y otra con el proyecto.
+13) En la CMD, se debe darle la ruta del proyecto al ambiente. Como en el siguiente ejemplo:
+	cd C:\Users\Clases\Desktop\ProyectosDjango
+14) Ahora creamos el proyecto con la siguiente linea de codigo:
+	django-admin startproject NOMBREDELPROYECTO
+15) Luego, ingresamos al proyecto con:
+	cd NOMBREDELPROYECTO
+16) Para correr el proyecto se ejecuta manage.py, con el siguiente comando:
+	python manage.py runserver
+17) con ctr+c se detiene el servidor
+18) El proyecto no puede decirnos que hay modulos no migrados. Debemos detener el proyecto.
+    Para migrar los modulos hay que :
+	 python manage.py migrate
+     Y ahora se puede volver a ejecutar el proyecto
+
+
+---- Comenzamos a desarrollar la app ----
+
+19) ejecutamos :
+	python manage.py startapp NOMBREDELMODULO
+	(python manage.py startapp core)
+	Esto nos creara una app o modulo o archivo en la aplicaciones
+
+--- Para la configuracion de django debe tener una ruta fisica especifica para poder ejecutarse ---
+
+20) Dentro de la carpeta CORE se debe crear una carpeta llamada "templates"
+
+21) Dentro de la carpeta "templates" se crea la carpeta "core"
+
+22) Dentro de core se crea "home.html"
+
+23) Dentro del core princiapl, creamos una nueva carpeta llamada "static"
+
+24) Dentro de static se crea una carpeta llamada "core"
+
+25) Dentro del ultimo core se crean 3 carptas js, css y img, donde iran los archivos js, css e imagenes, respectivamente.
+
+26) en settings.py, en INSTALLED_APPS se debe agregar 'core',
+
+27) crear la views
+
+28) agregar en url
+
+29) agregar en templates el html
+--- ------------------------------------ ------
+
+https://startbootstrap.com/
+
+https://www.pexels.com/es-es/
+
+--- ------------------------------------ ------
+
+Creacion de superUsuario
+
+30) python manage.py createsuperuser
+     (recuerda migrar)
+
+31) preguntara el nombre : root
+     correo: ingresar@correo.cl
+     password: root123
+
+
+32) python manage.py makemigrations gallery
+(si no te deja recueda ver si incluiste gallery en settings)
+
+
+33) python manage.py migrate gallery
+
+34) si desea incluir imagenes debe installar pillow previamente en cmd
+	pip install pillow
+
+
+
+
+
