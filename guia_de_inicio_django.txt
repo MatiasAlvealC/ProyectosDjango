@@ -82,7 +82,8 @@ Creacion de superUsuario
 30) python manage.py createsuperuser
      (recuerda migrar)
 
-31) preguntara el nombre : root
+31) preguntara  
+     nombre : root
      correo: ingresar@correo.cl
      password: root123
 
