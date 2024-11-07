@@ -33,6 +33,7 @@ urlpatterns = [
   path('documental/', views.documental, name='documental'),
   path('blog/', views.blog, name='blog'),
   path('pelicula_detalles/<int:pelicula_id>/', views.pelicula_detalles, name="pelicula_detalles"),
+  path('login/', views.login, name="login"),
 
 ]
     
