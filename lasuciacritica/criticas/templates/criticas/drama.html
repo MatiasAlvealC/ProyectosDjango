@@ -45,17 +45,19 @@
                       <div class="row">
                         <!-- Productos aquí -->
                           {% for pelicula in page_obj %}
-                              <div class="col-lg-4 col-md-6 col-sm-6">
-                                  <div class="product__item">
-                                      <div class="product__item__pic set-bg" data-setbg="{{ pelicula.image.url}}">
-                                          <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                          <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                      </div>
-                                      <div class="product__item__text">
-                                          <h5><a href="#">{{pelicula.titulo}}</a></h5>
-                                      </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                              <div class="product__item">
+                                  <a href="{% url 'pelicula_detalles' pelicula.id %}">
+                                    <div class="product__item__pic set-bg" data-setbg="{{ pelicula.image.url }}">
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                  </a>
+                                  <div class="product__item__text">
+                                    <h5><a href="{% url 'pelicula_detalles' pelicula.id %}">{{ pelicula.titulo }}</a></h5>
                                   </div>
                               </div>
+                            </div>
                           {% endfor %}
                         <!-- Repite los productos según sea necesario -->
                       </div>
