@@ -19,69 +19,129 @@
   <!-- Blog Section Begin -->
   <section class="blog spad">
     <div class="container">
-        <!-- Primera Fila: Imagen grande a la izquierda, imágenes pequeñas a la derecha -->
-        <div class="row mb-5">
-            <!-- Imagen Grande a la Izquierda -->
-            <div class="col-lg-8">
-                {% if page_obj %}
-                    <div class="blog__item set-bg" data-setbg="{{ page_obj.0.image.url }}">
-                        <div class="blog__item__text">
-                            <p><span class="icon_calendar"></span> {{ page_obj.0.fecha_estreno|date:"d F Y" }}</p>
-                            <h4><a href="#">{{ page_obj.0.titulo }}</a></h4>
-                        </div>
-                    </div>
-                {% endif %}
-            </div>
-
-            <!-- Cuatro Imágenes Pequeñas a la Derecha -->
-            <div class="col-lg-4">
-                <div class="row">
-                    {% for pelicula in page_obj|slice:"1:5" %}
-                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
-                            <div class="blog__item small__item set-bg" data-setbg="{{ pelicula.image.url }}">
-                                <div class="blog__item__text">
-                                    <p><span class="icon_calendar"></span> {{ pelicula.fecha_estreno|date:"d F Y" }}</p>
-                                    <h4><a href="#">{{ pelicula.titulo }}</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        <!-- Segunda Fila: Cuatro Imágenes Pequeñas a la Izquierda, Imagen Grande a la Derecha -->
         <div class="row">
-            <!-- Cuatro Imágenes Pequeñas a la Izquierda -->
-            <div class="col-lg-4">
+          {% if page_obj %}
+            <div class="col-lg-6">
                 <div class="row">
-                    {% for pelicula in page_obj|slice:"5:9" %}
-                        <div class="col-lg-6 col-md-6 col-sm-6 mb-4">
-                            <div class="blog__item small__item set-bg" data-setbg="{{ pelicula.image.url }}">
-                                <div class="blog__item__text">
-                                    <p><span class="icon_calendar"></span> {{ pelicula.fecha_estreno|date:"d F Y" }}</p>
-                                    <h4><a href="#">{{ pelicula.titulo }}</a></h4>
-                                </div>
+                    <div class="col-lg-12">
+                        <div class="blog__item set-bg" data-setbg="{{ page_obj.0.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.0.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.0.titulo }}</a></h4>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <!-- Imagen Grande a la Derecha -->
-            <div class="col-lg-8">
-                {% if page_obj %}
-                    <div class="blog__item set-bg"  data-setbg="{{ page_obj.9.image.url }}">
-                        <div class="blog__item__text">
-                            <p><span class="icon_calendar"></span> {{ page_obj.9.fecha_estreno|date:"d F Y" }}</p>
-                            <h4><a href="#">{{ page_obj.9.titulo }}</a></h4>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item small__item set-bg" data-setbg="{{ page_obj.1.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.1.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.1.titulo }}</a></h4>
+                            </div>
                         </div>
                     </div>
-                {% endif %}
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item small__item set-bg" data-setbg="{{ page_obj.2.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.2.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.2.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="blog__item set-bg" data-setbg="{{ page_obj.3.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.3.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.3.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item small__item set-bg" data-setbg="{{ page_obj.4.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.4.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.4.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item small__item set-bg" data-setbg="{{ page_obj.5.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.5.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.5.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item small__item set-bg" data-setbg="{{ page_obj.6.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.6.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.6.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item small__item set-bg" data-setbg="{{ page_obj.7.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.7.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.7.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="blog__item set-bg" data-setbg="{{ page_obj.8.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.8.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.8.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item small__item set-bg" data-setbg="{{ page_obj.9.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.9.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.9.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog__item small__item set-bg" data-setbg="{{ page_obj.10.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.10.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.10.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="blog__item set-bg" data-setbg="{{ page_obj.11.image.url }}">
+                            <div class="blog__item__text">
+                                <p><span class="icon_calendar"></span> {{ page_obj.11.fecha_estreno|date:"d F Y" }}</p>
+                                <h4><a href="#">{{ page_obj.11.titulo }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          {% endif %}
+          </div>
         </div>
     </div>
 </section>
 <!-- Blog Section End -->
 
+
 {% endblock %}
+
+
+<div class="col-lg-8">
+    {% if page_obj %}
+        <div class="blog__item set-bg"  data-setbg="{{ page_obj.9.image.url }}">
+            <div class="blog__item__text">
+                <p><span class="icon_calendar"></span> {{ page_obj.9.fecha_estreno|date:"d F Y" }}</p>
+                <h4><a href="#">{{ page_obj.9.titulo }}</a></h4>
+            </div>
+        </div>
+    {% endif %}
+</div>

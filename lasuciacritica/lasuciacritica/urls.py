@@ -32,6 +32,7 @@ urlpatterns = [
   path('animacion/', views.animacion, name='animacion'),
   path('documental/', views.documental, name='documental'),
   path('blog/', views.blog, name='blog'),
+  path('pelicula_detalles/<int:pelicula_id>/', views.pelicula_detalles, name="pelicula_detalles"),
 
 ]
     
