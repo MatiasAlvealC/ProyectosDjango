@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Productos</h1>
+  {% for p in post %}
+    <hr>
+    <p> Fecha Publicación: {{p.published | date:"SHORT_DATE_FORMAT"}}</p>
+    <p> Nombre Producto: {{p.title}}</p>
+    <p> Detalle: {{p.content}}</p>
+    <p> Autor: {{p.author}}</p>
+    <p> Categoria: {{p.classification.all | join:", "}}</p>
+    <br>
+  {% endfor %}
+  <h2>Categorias</h2>
+  {% for c in category %}
+    <a href="{% url 'category' c.id %}">{{ c.name}}</a>
+    <br>
+  {% endfor%}
+</body>
+</html>
